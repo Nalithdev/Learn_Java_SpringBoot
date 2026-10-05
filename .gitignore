@@ -1,0 +1,30 @@
+### Maven ###
+target/
+.mvn/wrapper/maven-wrapper.jar
+HELP.md
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### Eclipse / STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### VS Code ###
+.vscode/
+
+### Système ###
+.DS_Store
+Thumbs.db
+
+### Claude Code (réglages locaux) ###
+.claude/settings.local.json

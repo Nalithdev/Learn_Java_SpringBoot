@@ -1,0 +1,3 @@
+# Le script mvnw doit garder des fins de ligne Unix, mvnw.cmd des fins de ligne Windows
+**/mvnw text eol=lf
+*.cmd text eol=crlf
