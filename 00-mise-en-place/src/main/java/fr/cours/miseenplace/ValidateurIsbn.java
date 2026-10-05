@@ -8,7 +8,38 @@ package fr.cours.miseenplace;
 public class ValidateurIsbn {
 
 	public boolean estValide(String isbn) {
-		throw new UnsupportedOperationException("À implémenter");
+		int keyControl = 0;
+		int lastCharId = 0;
+		if (isbn == null || isbn.equals("")){
+			return false;
+		}
+
+		if (isbn.matches("\\d+-+\\d+-+\\d+-+\\d+-\\d+")){
+			isbn = isbn.replaceAll("-", "");
+			System.out.println(isbn);
+		}
+
+		if (isbn.length() < 13 || !isbn.matches("\\d+")){
+			return false;
+		}
+
+		for (int i=0; i < isbn.length()-1; i++){
+			if (i%2 == 0){
+				keyControl += Character.getNumericValue(isbn.charAt(i))*1;				
+			} else {
+				keyControl += Character.getNumericValue(isbn.charAt(i))*3;
+			}
+			if (i == isbn.length()-2){
+				lastCharId = i+1;
+			}
+		}
+		if(10-(keyControl%10) == Character.getNumericValue(isbn.charAt(lastCharId))){
+			return true;
+
+		}
+		else {
+			return false;
+		}
 	}
 
 }

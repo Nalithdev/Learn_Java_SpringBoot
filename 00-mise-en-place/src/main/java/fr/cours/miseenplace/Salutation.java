@@ -8,7 +8,12 @@ package fr.cours.miseenplace;
 public class Salutation {
 
 	public String saluer(String prenom) {
-		throw new UnsupportedOperationException("À implémenter");
+
+		if (prenom == null || prenom.matches("\\s+") || prenom.equals("")){
+			prenom = "inconnu";
+		} 
+		String nameWithoutSpace = prenom.replaceAll("\\s+", "");
+		return ("Bonjour, " + nameWithoutSpace + " !");
 	}
 
 }
