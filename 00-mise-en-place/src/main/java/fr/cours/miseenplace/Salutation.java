@@ -8,15 +8,14 @@ package fr.cours.miseenplace;
 public class Salutation {
 
 	public String saluer(String prenom) {
-		String nameWithoutSpace = "";
+		String personName = "";
 
-		if (prenom == null || prenom.matches("\\s+") || prenom.equals("")){
-			nameWithoutSpace = "inconnu";
+		if (prenom == null || prenom.isBlank()){
+			personName = "inconnu";
 		} else {
-			nameWithoutSpace = prenom;
+			personName = prenom;
 		}
-		nameWithoutSpace = nameWithoutSpace.trim();
-		return ("Bonjour, " + nameWithoutSpace + " !");
+		return ("Bonjour, " + personName.trim() + " !");
 	}
 
 }

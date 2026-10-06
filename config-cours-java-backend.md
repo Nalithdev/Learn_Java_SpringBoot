@@ -117,8 +117,8 @@ cours-java-backend/                  ← racine
 ## 7. Progression
 
 - **Cours en cours :** 00 — Mise en place
-- **Statut :** énoncé, tests et squelette fournis — à l'apprenant de coder (Red)
-- **Tests passants :** 1 / 19 (seul `contextLoads`)
-- **Notions maîtrisées :** —
-- **Points à revoir :** —
-- **Dernière séance :** 2026-10-05 (dépôt Git initialisé, cours 00 publié)
+- **Statut :** ✅ validé le 2026-10-06 (25/25) — derniers points de style à intégrer au commit final
+- **Tests passants :** 25 / 25
+- **Notions maîtrisées :** cycle Red/Green, lecture d'un rapport Maven, `matches()` porte sur toute la chaîne, cas limites (clé = 0, longueur exacte), `isBlank()` / `trim()`, lecture d'une erreur de compilation
+- **Points à revoir :** simplifier (`return condition;` au lieu de if/else true/false, pas de `if` avant un `replace`), déclarer les variables au plus près de leur usage, nettoyer les commentaires du squelette ; a tendance à reporter le ménage du Refactor
+- **Dernière séance :** 2026-10-06 (relecture du cours 00)
