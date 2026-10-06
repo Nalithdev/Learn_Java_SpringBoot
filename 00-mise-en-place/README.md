@@ -84,6 +84,7 @@ Astuce : pour ne lancer qu'une classe de test :
 | 2 | `retireLesEspacesAutourDuPrenom` | `"  Ada  "` → `"Bonjour, Ada !"` |
 | 3 | `salueUnInconnuQuandPrenomNull` | `null` → `"Bonjour, inconnu !"` |
 | 4 | `salueUnInconnuQuandPrenomVide` | `""` ou `"   "` → `"Bonjour, inconnu !"` |
+| 5 | `gardeLesEspacesInterieurs` | `"  Jean Pierre "` → `"Bonjour, Jean Pierre !"` *(ajouté après relecture)* |
 
 ### B. `ValidateurIsbn.estValide(String isbn)`
 
@@ -108,6 +109,9 @@ produits :  9 21  8  0  3  0  6 12  0 18  1 15  7   → somme = 100 ✅
 | 5 | `accepteIsbnValide` | clé correcte → `true` |
 | 6 | `refuseIsbnAvecMauvaiseCle` | clé fausse → `false` |
 | 7 | `accepteIsbnValideAvecTirets` | les tirets `-` sont ignorés (mais pas les espaces) |
+| 8 | `accepteIsbnAvecCleZero` | somme des 12 premiers produits multiple de 10 → la clé vaut **0** *(ajouté après relecture)* |
+| 9 | `refuseQuatorzeChiffresQuiTombentJuste` | 14 chiffres → `false`, même si le calcul « tombe juste » *(ajouté après relecture)* |
+| 10 | `accepteIsbnAvecTiretsPlacesLibrement` | n'importe quel nombre de tirets, à n'importe quelle position *(ajouté après relecture)* |
 
 ## Étape 5 — Refactor 🔧
 

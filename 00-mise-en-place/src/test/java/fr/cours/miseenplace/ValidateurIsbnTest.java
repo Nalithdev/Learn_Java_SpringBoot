@@ -59,4 +59,24 @@ class ValidateurIsbnTest {
 		assertThat(validateur.estValide(isbn)).isTrue();
 	}
 
+	@Test
+	@DisplayName("8. accepte un ISBN valide dont la clé de contrôle vaut 0")
+	void accepteIsbnAvecCleZero() {
+		// somme des 12 premiers produits = 100 → clé = 0
+		assertThat(validateur.estValide("9782266111560")).isTrue();
+	}
+
+	@Test
+	@DisplayName("9. refuse un ISBN de 14 chiffres, même si les 14 chiffres « tombent juste »")
+	void refuseQuatorzeChiffresQuiTombentJuste() {
+		assertThat(validateur.estValide("97803064061534")).isFalse();
+	}
+
+	@ParameterizedTest(name = "\"{0}\" est valide quel que soit le placement des tirets")
+	@ValueSource(strings = { "978-0306406157", "9780-306-406-157", "978-0-306-40615-7" })
+	@DisplayName("10. accepte un ISBN valide quel que soit le nombre et la position des tirets")
+	void accepteIsbnAvecTiretsPlacesLibrement(String isbn) {
+		assertThat(validateur.estValide(isbn)).isTrue();
+	}
+
 }

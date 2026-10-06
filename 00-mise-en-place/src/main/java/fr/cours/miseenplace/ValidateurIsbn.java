@@ -14,12 +14,12 @@ public class ValidateurIsbn {
 			return false;
 		}
 
-		if (isbn.matches("\\d+-+\\d+-+\\d+-+\\d+-\\d+")){
+		if (isbn.contains("-")){
 			isbn = isbn.replaceAll("-", "");
 			System.out.println(isbn);
 		}
 
-		if (isbn.length() < 13 || !isbn.matches("\\d+")){
+		if (isbn.length() < 13 || !isbn.matches("\\d+") || isbn.length() > 13){
 			return false;
 		}
 
@@ -30,8 +30,14 @@ public class ValidateurIsbn {
 				keyControl += Character.getNumericValue(isbn.charAt(i))*3;
 			}
 			if (i == isbn.length()-2){
-				lastCharId = i+1;
+				lastCharId = i + 1;
 			}
+		}
+		System.out.println(keyControl%10);
+
+		if (keyControl%10 == 0 && keyControl%10 == Character.getNumericValue(isbn.charAt(lastCharId))){
+			return true;
+
 		}
 		if(10-(keyControl%10) == Character.getNumericValue(isbn.charAt(lastCharId))){
 			return true;

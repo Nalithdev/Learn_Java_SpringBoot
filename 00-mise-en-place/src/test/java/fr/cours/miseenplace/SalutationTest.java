@@ -35,4 +35,10 @@ class SalutationTest {
 		assertThat(salutation.saluer("   ")).isEqualTo("Bonjour, inconnu !");
 	}
 
+	@Test
+	@DisplayName("5. garde les espaces à l'intérieur d'un prénom composé")
+	void gardeLesEspacesInterieurs() {
+		assertThat(salutation.saluer("  Jean Pierre ")).isEqualTo("Bonjour, Jean Pierre !");
+	}
+
 }
